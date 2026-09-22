@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="Neuropathy Education Guide — a digital educational resource about peripheral neuropathy, nerve health, symptom tracking, general wellness topics, and questions to discuss with a licensed healthcare professional." />
+  <title>Neuropathy Education Guide | Digital Learning Program</title>
+
+  <!--
+    IMPORTANT BEFORE PUBLISHING:
+    1) Replace https://YOUR-CHECKOUT-URL.com with your real checkout URL.
+    2) Replace support@YOURDOMAIN.com with your real support email.
+    3) Review/refine the Refund Policy so it exactly matches your actual sales terms.
+    4) Add your legal business name/address where required by your business or applicable law.
+  -->
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --surface-2: #eef4f8;
+      --text: #16202a;
+      --muted: #5f6b76;
+      --primary: #176b87;
+      --primary-dark: #10546b;
+      --accent: #e7f4f7;
+      --border: #dce5ea;
+      --success: #2a7157;
+      --warning-bg: #fff8e7;
+      --warning-border: #ead59d;
+      --shadow: 0 18px 48px rgba(17, 42, 58, 0.10);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: #0f3140;
+      color: #eaf7fb;
+      font-size: 14px;
+      padding: 9px 0;
+      text-align: center;
+    }
+
+    header {
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #176b87, #49a3b8);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(23,107,135,.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #fff !important;
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 74px 0 54px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(73,163,184,.18), transparent 34%),
+        radial-gradient(circle at 10% 5%, rgba(23,107,135,.10), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: var(--primary-dark);
+      border: 1px solid #cbe6ed;
+      padding: 7px 11px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      margin: 18px 0 20px;
+      max-width: 760px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 0 26px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin: 28px 0 12px;
+    }
+
+    .btn {
+      border: 0;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 12px;
+      padding: 15px 21px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(23,107,135,.22);
+    }
+
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    .btn-secondary {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .microcopy {
+      font-size: 13px !important;
+      color: #6d7983 !important;
+      margin-top: 10px !important;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .cover {
+      border-radius: 18px;
+      min-height: 280px;
+      background:
+        linear-gradient(145deg, rgba(15,49,64,.90), rgba(23,107,135,.82)),
+        radial-gradient(circle at 75% 25%, rgba(255,255,255,.18), transparent 24%);
+      padding: 32px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cover:after {
+      content: "";
+      position: absolute;
+      right: -45px;
+      bottom: -55px;
+      width: 210px;
+      height: 210px;
+      border: 2px solid rgba(255,255,255,.24);
+      border-radius: 50%;
+      box-shadow: 0 0 0 28px rgba(255,255,255,.05), 0 0 0 56px rgba(255,255,255,.035);
+    }
+
+    .cover-kicker {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      opacity: .84;
+      font-weight: 800;
+    }
+
+    .cover-title {
+      font-size: 35px;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      max-width: 320px;
+      font-weight: 850;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cover-sub {
+      font-size: 14px;
+      max-width: 300px;
+      opacity: .9;
+      position: relative;
+      z-index: 2;
+    }
+
+    .price-box {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 22px;
+    }
+
+    .price small {
+      display: block;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .price strong {
+      display: block;
+      font-size: 44px;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-top: 5px;
+    }
+
+    section { padding: 68px 0; }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 32px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(31px, 4vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      margin: 0 0 13px;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 8px 30px rgba(17,42,58,.05);
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 17px;
+      font-weight: 900;
+    }
+
+    .card h3 {
+      margin: 0 0 9px;
+      font-size: 19px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .note {
+      border: 1px solid var(--warning-border);
+      background: var(--warning-bg);
+      border-radius: var(--radius);
+      padding: 22px;
+      margin-top: 24px;
+      color: #55491f;
+    }
+
+    .note strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #3f3516;
+    }
+
+    .included {
+      background: #0f3140;
+      color: #eff9fc;
+    }
+
+    .included .section-head p { color: #c5d7df; }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 18px;
+      margin: 26px 0 0;
+    }
+
+    .check {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 14px;
+      padding: 16px;
+    }
+
+    .check b {
+      color: #88d4e3;
+      font-size: 18px;
+    }
+
+    .check span { color: #e8f2f5; }
+
+    .faq {
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0 18px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      padding: 18px 0;
+    }
+
+    details p {
+      color: var(--muted);
+      margin: -3px 0 18px;
+    }
+
+    .purchase {
+      padding-top: 24px;
+    }
+
+    .purchase-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 34px;
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .purchase-box h2 {
+      margin: 0 0 8px;
+      font-size: 34px;
+      letter-spacing: -0.035em;
+    }
+
+    .purchase-box p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .purchase-action {
+      min-width: 270px;
+      text-align: center;
+    }
+
+    .purchase-action .btn {
+      width: 100%;
+      font-size: 17px;
+    }
+
+    .purchase-action small {
+      display: block;
+      margin-top: 9px;
+      color: var(--muted);
+    }
+
+    .legal-intro {
+      background: var(--surface-2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .legal-intro .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    .legal-block h3 {
+      margin-top: 0;
+    }
+
+    .legal-block p, .legal-block li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      background: #0b2430;
+      color: #d6e4e9;
+      padding: 44px 0 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 28px;
+    }
+
+    .footer-title {
+      font-weight: 850;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    footer p, footer li, footer a {
+      font-size: 13px;
+      color: #b8cbd3;
+    }
+
+    footer a { text-decoration: none; }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    footer li { margin: 7px 0; }
+
+    .disclaimer {
+      margin-top: 30px;
+      padding-top: 26px;
+      border-top: 1px solid rgba(255,255,255,.11);
+      font-size: 12px;
+      color: #9fb5be;
+    }
+
+    .disclaimer p { color: #9fb5be; }
+
+    .copyright {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      gap: 18px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: #88a2ad;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(6,20,27,.72);
+      z-index: 100;
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .modal.open {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .modal-card {
+      width: min(820px, 100%);
+      margin: 4vh auto;
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+      overflow: hidden;
+    }
+
+    .modal-head {
+      padding: 20px 22px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .modal-head h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .close {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+      font-size: 22px;
+    }
+
+    .modal-body {
+      padding: 24px;
+      color: #3f4b55;
+      font-size: 14px;
+    }
+
+    .modal-body h3 {
+      color: var(--text);
+      margin: 22px 0 8px;
+    }
+
+    .modal-body p, .modal-body li { color: #4e5b65; }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .grid-3,
+      .legal-intro .container,
+      .footer-grid,
+      .purchase-box {
+        grid-template-columns: 1fr;
+      }
+
+      .checklist { grid-template-columns: 1fr; }
+      .hero { padding-top: 50px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .purchase-action { min-width: 0; }
+      .price-box { align-items: center; }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(100% - 24px, var(--max)); }
+      .hero-card { padding: 18px; }
+      .cover { min-height: 245px; padding: 24px; }
+      .purchase-box { padding: 24px; }
+      .cta-row .btn { width: 100%; }
+      .nav { min-height: 64px; }
+      .brand span:last-child { font-size: 14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    Educational digital content about neuropathy and peripheral nerve health — not medical treatment.
+  </div>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark">N</div>
+        <span>Neuropathy Education Guide</span>
+      </div>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#learn">What You'll Learn</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta" href="https://YOUR-CHECKOUT-URL.com">Get Access — $78</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Neuropathy & Nerve Health Education</span>
+          <h1>Understand neuropathy with clear, practical information.</h1>
+          <p>
+            A digital educational guide for adults who want to learn more about peripheral neuropathy,
+            nerve health, commonly discussed nerve-related sensations, general wellness considerations,
+            symptom tracking, and useful questions to discuss with a licensed healthcare professional.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://YOUR-CHECKOUT-URL.com">Get Digital Access — $78</a>
+            <a class="btn btn-secondary" href="#learn">See What’s Included</a>
+          </div>
+
+          <p class="microcopy">
+            One-time payment • Digital educational product • No promise of cure, treatment, or specific health outcome
+          </p>
+        </div>
+
+        <aside class="hero-card" aria-label="Product summary">
+          <div class="cover">
+            <div class="cover-kicker">Digital Learning Program</div>
+            <div class="cover-title">Neuropathy Education Guide</div>
+            <div class="cover-sub">
+              A straightforward resource for learning about peripheral neuropathy and preparing more informed conversations with healthcare professionals.
+            </div>
+          </div>
+
+          <div class="price-box">
+            <div class="price">
+              <small>Digital Access</small>
+              <strong>$78</strong>
+            </div>
+            <span style="color:var(--success); font-weight:800; font-size:14px;">Educational resource</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="learn">
+      <div class="container">
+        <div class="section-head">
+          <h2>What the program covers</h2>
+          <p>
+            The material is designed to improve health literacy around neuropathy. It does not diagnose a condition
+            and does not replace a clinician, medication, physical examination, laboratory testing, or individualized medical care.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon">01</div>
+            <h3>Neuropathy Basics</h3>
+            <p>
+              Learn commonly used terms related to peripheral neuropathy, peripheral nerves, sensation, and nerve function.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">02</div>
+            <h3>Symptom Awareness</h3>
+            <p>
+              Learn how clinicians may discuss sensations such as tingling, numbness, burning, sensitivity, or discomfort without using the guide to self-diagnose.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">03</div>
+            <h3>Conversation Checklist</h3>
+            <p>
+              Organize questions, timelines, medications, daily observations, and other information that may be useful during a medical appointment.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">04</div>
+            <h3>Daily Wellness Topics</h3>
+            <p>
+              Review general educational topics such as sleep, movement, hydration, foot awareness, and everyday routines that can be discussed with a healthcare professional.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">05</div>
+            <h3>Tracking & Notes</h3>
+            <p>
+              Use simple worksheets to record patterns, questions, changes, and concerns so medical conversations can be more organized.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">06</div>
+            <h3>When Professional Care Matters</h3>
+            <p>
+              Learn why new, worsening, severe, or unexplained nerve-related symptoms should be evaluated by a qualified healthcare professional.
+            </p>
+          </article>
+        </div>
+
+        <div class="note">
+          <strong>Important medical notice</strong>
+          This product is for general educational and informational purposes only. It is not intended to diagnose, treat,
+          cure, prevent, or manage neuropathy or any disease. Do not use this material as a substitute for medical advice.
+          Always consult a licensed healthcare professional regarding symptoms, medications, treatment decisions, or changes in health.
+        </div>
+      </div>
+    </section>
+
+    <section class="included">
+      <div class="container">
+        <div class="section-head">
+          <h2>Designed for learning — not self-treatment</h2>
+          <p>
+            The program focuses on understanding terminology, organizing information, and improving communication with healthcare professionals.
+          </p>
+        </div>
+
+        <div class="checklist">
+          <div class="check"><b>✓</b><span>Plain-English overview of peripheral neuropathy and nerve-health terminology</span></div>
+          <div class="check"><b>✓</b><span>Printable symptom and appointment-preparation worksheets</span></div>
+          <div class="check"><b>✓</b><span>General wellness education to discuss with a licensed professional</span></div>
+          <div class="check"><b>✓</b><span>Questions that may help guide a more productive medical conversation</span></div>
+          <div class="check"><b>✓</b><span>Guidance on keeping notes about changes and concerns over time</span></div>
+          <div class="check"><b>✓</b><span>Clear reminders that medical care should come from qualified professionals</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Frequently asked questions</h2>
+          <p>Clear answers about what this digital neuropathy education product is — and what it is not.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Does this product treat or cure neuropathy?</summary>
+            <p>
+              No. This is an educational digital product. It does not diagnose, treat, cure, reverse, or prevent neuropathy,
+              and no specific health result is promised or guaranteed.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can this replace a doctor, medication, or treatment plan?</summary>
+            <p>
+              No. Medical decisions should be made with a licensed healthcare professional who can evaluate individual medical history,
+              symptoms, medications, examination findings, and other relevant information.
+            </p>
+          </details>
+
+          <details>
+            <summary>Who is this information for?</summary>
+            <p>
+              It is intended for adults seeking general educational information about neuropathy, peripheral nerve health,
+              symptom organization, and topics that may be useful to discuss with a healthcare professional.
+            </p>
+          </details>
+
+          <details>
+            <summary>What happens if symptoms are severe, sudden, or getting worse?</summary>
+            <p>
+              Seek prompt medical evaluation. Severe, sudden, rapidly worsening, or unexplained symptoms should not be evaluated through a digital guide.
+              In an emergency, contact local emergency services.
+            </p>
+          </details>
+
+          <details>
+            <summary>Is any result guaranteed?</summary>
+            <p>
+              No. This product makes no guarantee of symptom improvement, pain reduction, disease modification, or any other medical outcome.
+              Individual circumstances vary and health concerns should be evaluated by qualified professionals.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="purchase" id="purchase">
+      <div class="container">
+        <div class="purchase-box">
+          <div>
+            <h2>Get the Neuropathy Education Guide</h2>
+            <p>
+              Digital educational access for <strong>$78</strong>. Use the material to learn, organize questions, and prepare for more informed conversations with healthcare professionals.
+            </p>
+          </div>
+
+          <div class="purchase-action">
+            <a class="btn btn-primary" href="https://YOUR-CHECKOUT-URL.com">Purchase Digital Access — $78</a>
+            <small>One-time payment. Educational content only.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal-intro">
+      <div class="container">
+        <div class="legal-block">
+          <h3>Medical Disclaimer</h3>
+          <p>
+            The information on this website and inside the digital product is provided for general educational purposes only.
+            It is not medical advice and should not be used to diagnose, treat, cure, prevent, or manage neuropathy or any other condition.
+            Always seek guidance from a licensed physician or other qualified healthcare professional regarding medical concerns.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h3>No Guaranteed Results</h3>
+          <p>
+            No statement on this website should be interpreted as a promise or guarantee of a particular health outcome.
+            Results and experiences vary. Purchasing this product does not establish a doctor-patient relationship.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title">Neuropathy Education Guide</div>
+          <p>
+            General educational information about neuropathy and peripheral nerve health.
+            This product is not a medical service and is not a substitute for professional medical care.
+          </p>
+          <p>
+            Support: <a href="mailto:support@YOURDOMAIN.com">support@YOURDOMAIN.com</a>
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-title">Policies</div>
+          <ul>
+            <li><a href="#" data-modal="privacy">Privacy Policy</a></li>
+            <li><a href="#" data-modal="terms">Terms & Conditions</a></li>
+            <li><a href="#" data-modal="refund">Refund Policy</a></li>
+            <li><a href="#" data-modal="medical">Medical Disclaimer</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-title">Product</div>
+          <ul>
+            <li><a href="#learn">What You'll Learn</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="https://YOUR-CHECKOUT-URL.com">Purchase — $78</a></li>
+            <li><a href="mailto:support@YOURDOMAIN.com">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <p>
+          <strong>HEALTH DISCLAIMER:</strong> This website and the Neuropathy Education Guide provide general educational information only.
+          The content is not intended to diagnose, treat, cure, prevent, or manage any disease or medical condition, including neuropathy.
+          Statements on this site have not been evaluated as individualized medical advice. Consult a licensed healthcare professional before making
+          decisions related to symptoms, medication, treatment, diet, exercise, supplements, or other health matters.
+        </p>
+
+        <p>
+          <strong>RESULTS DISCLAIMER:</strong> No medical or health outcome is promised or guaranteed. Individual circumstances and experiences vary.
+          Any examples, educational scenarios, or descriptions are provided for informational purposes and should not be interpreted as typical or guaranteed results.
+        </p>
+
+        <p>
+          <strong>FACEBOOK / META DISCLAIMER:</strong> This website is not a part of Facebook, Instagram, or Meta Platforms, Inc.,
+          and is not endorsed by Facebook, Instagram, or Meta. Facebook and Instagram are trademarks of Meta Platforms, Inc.
+          Advertising approval, delivery, or performance is not guaranteed.
+        </p>
+
+        <p>
+          <strong>ADVERTISING NOTICE:</strong> Marketing materials should not be interpreted as a statement about any viewer's personal health status.
+          References to neuropathy describe the subject matter of this educational product and do not imply that any individual visitor has neuropathy,
+          nerve damage, pain, or another medical condition.
+        </p>
+      </div>
+
+      <div class="copyright">
+        <span>© 2026 Neuropathy Education Guide. All rights reserved.</span>
+        <span>Last updated: September 22, 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PRIVACY POLICY -->
+  <div class="modal" id="privacy" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="privacy-title">Privacy Policy</h2>
+        <button class="close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Last updated: September 22, 2026</strong></p>
+        <p>
+          This Privacy Policy explains how information may be collected, used, and protected when visitors use this website.
+          The site owner should update this policy to accurately reflect the analytics, checkout, email, advertising, and other technologies actually used.
+        </p>
+
+        <h3>Information that may be collected</h3>
+        <p>
+          Depending on the services connected to this website, information may include contact information voluntarily submitted by a visitor,
+          transaction-related information handled by a checkout provider, device/browser information, IP address, referring URLs,
+          and analytics or advertising event data.
+        </p>
+
+        <h3>How information may be used</h3>
+        <ul>
+          <li>To provide access to purchased digital content.</li>
+          <li>To process and support transactions through authorized payment providers.</li>
+          <li>To respond to customer-service requests.</li>
+          <li>To maintain website security and prevent fraud or abuse.</li>
+          <li>To understand site performance and improve user experience.</li>
+          <li>To measure advertising performance where permitted by applicable law and platform rules.</li>
+        </ul>
+
+        <h3>Cookies and similar technologies</h3>
+        <p>
+          This website may use cookies, pixels, or similar technologies for essential site functions, analytics, and advertising measurement.
+          Where legally required, consent should be obtained before non-essential tracking is activated.
+        </p>
+
+        <h3>Payment information</h3>
+        <p>
+          Payment card information should be processed by the selected third-party checkout/payment provider.
+          This website should not directly store full card numbers unless the site owner has implemented the required compliant payment infrastructure.
+        </p>
+
+        <h3>Data sharing</h3>
+        <p>
+          Information may be shared with service providers that support hosting, payment processing, customer support, analytics,
+          fraud prevention, email delivery, or advertising measurement, only as appropriate for the services being provided.
+        </p>
+
+        <h3>Your choices</h3>
+        <p>
+          Depending on applicable law, users may have rights to request access, correction, deletion, or restriction of certain personal information.
+          Contact <a href="mailto:support@YOURDOMAIN.com">support@YOURDOMAIN.com</a> for privacy-related requests.
+        </p>
+
+        <h3>Children</h3>
+        <p>
+          This product is intended for adults and is not directed to children under 13.
+        </p>
+
+        <h3>Policy updates</h3>
+        <p>
+          This Privacy Policy may be updated when practices, technologies, or legal requirements change.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TERMS -->
+  <div class="modal" id="terms" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="terms-title">Terms & Conditions</h2>
+        <button class="close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Last updated: September 22, 2026</strong></p>
+        <p>
+          By accessing this website or purchasing the digital product, the customer agrees to these Terms & Conditions.
+        </p>
+
+        <h3>Educational purpose</h3>
+        <p>
+          The Neuropathy Education Guide is a general educational product. It is not medical care, diagnosis, treatment,
+          therapy, or a substitute for consultation with a licensed healthcare professional.
+        </p>
+
+        <h3>License and permitted use</h3>
+        <p>
+          Purchase provides a personal, non-exclusive, non-transferable license to access the purchased digital content.
+          Content may not be resold, redistributed, copied for commercial use, or publicly republished without written permission.
+        </p>
+
+        <h3>No medical relationship</h3>
+        <p>
+          Use of this website or product does not create a doctor-patient, therapist-patient, or other healthcare-provider relationship.
+        </p>
+
+        <h3>No guarantee</h3>
+        <p>
+          No specific medical, health, financial, or personal result is guaranteed. Educational information may not be suitable for every person or situation.
+        </p>
+
+        <h3>Third-party services</h3>
+        <p>
+          Checkout, hosting, analytics, email, or other functions may be provided by third parties and may be subject to their own terms and policies.
+        </p>
+
+        <h3>Limitation</h3>
+        <p>
+          To the maximum extent permitted by applicable law, the website owner and product publisher are not responsible for decisions made
+          in place of professional medical evaluation or for misuse of the educational information.
+        </p>
+
+        <h3>Contact</h3>
+        <p>
+          Questions about these terms may be sent to <a href="mailto:support@YOURDOMAIN.com">support@YOURDOMAIN.com</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REFUND -->
+  <div class="modal" id="refund" role="dialog" aria-modal="true" aria-labelledby="refund-title">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="refund-title">Refund Policy</h2>
+        <button class="close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Last updated: September 22, 2026</strong></p>
+
+        <div style="padding:14px 16px; background:#fff8e7; border:1px solid #ead59d; border-radius:12px; margin-bottom:18px;">
+          <strong>Publisher note:</strong> Replace this section with the exact refund terms used by your checkout/payment provider before publishing.
+        </div>
+
+        <p>
+          Refund eligibility, deadlines, and processing rules must match the terms presented at checkout and applicable consumer-protection law.
+          If a refund is offered, customers should submit requests through the support contact or checkout provider identified in the purchase receipt.
+        </p>
+
+        <h3>How to request help</h3>
+        <p>
+          Contact <a href="mailto:support@YOURDOMAIN.com">support@YOURDOMAIN.com</a> and include the purchaser's name,
+          order email, transaction or order number, and a brief description of the request.
+        </p>
+
+        <h3>Duplicate or unauthorized charges</h3>
+        <p>
+          Customers who believe a duplicate or unauthorized charge occurred should contact support promptly and may also contact the payment provider
+          shown on the transaction receipt.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MEDICAL DISCLAIMER -->
+  <div class="modal" id="medical" role="dialog" aria-modal="true" aria-labelledby="medical-title">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2 id="medical-title">Medical Disclaimer</h2>
+        <button class="close" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Last updated: September 22, 2026</strong></p>
+
+        <p>
+          All content provided on this website and in the Neuropathy Education Guide is for general informational and educational purposes only.
+          It is not intended as medical advice and is not intended to diagnose, treat, cure, prevent, or manage neuropathy or any other disease or condition.
+        </p>
+
+        <p>
+          Always seek the advice of a physician or other qualified licensed healthcare professional with questions about a medical condition,
+          symptoms, medications, supplements, diet, exercise, or treatment options. Never disregard professional medical advice or delay seeking it
+          because of information found on this website or inside the digital product.
+        </p>
+
+        <p>
+          If symptoms are sudden, severe, rapidly worsening, or associated with an emergency, contact local emergency services or seek immediate medical care.
+        </p>
+
+        <p>
+          No health outcome is guaranteed. Individual conditions, causes, responses, and treatment needs vary.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const modalLinks = document.querySelectorAll("[data-modal]");
+      const modals = document.querySelectorAll(".modal");
+
+      function closeModal(modal) {
+        modal.classList.remove("open");
+        document.body.style.overflow = "";
+      }
+
+      modalLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          const modal = document.getElementById(this.dataset.modal);
+          if (modal) {
+            modal.classList.add("open");
+            document.body.style.overflow = "hidden";
+          }
+        });
+      });
+
+      modals.forEach(modal => {
+        modal.querySelector(".close").addEventListener("click", () => closeModal(modal));
+
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) closeModal(modal);
+        });
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          document.querySelectorAll(".modal.open").forEach(closeModal);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
