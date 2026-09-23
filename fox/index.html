@@ -1930,6 +1930,48 @@ document.head.appendChild(a);
   });
 </script>
 
+
+<!-- Rolagem suave automática quando a área dos potes ficar visível -->
+<script>
+(function () {
+  var hasScrolledToKits = false;
+
+  function kitsAreVisible() {
+    var kits = document.getElementById('kits');
+    if (!kits) return false;
+
+    var style = window.getComputedStyle(kits);
+    return style.display !== 'none' &&
+           style.visibility !== 'hidden' &&
+           kits.getClientRects().length > 0;
+  }
+
+  function scrollToKitsOnce() {
+    if (hasScrolledToKits || !kitsAreVisible()) return;
+
+    hasScrolledToKits = true;
+    var kits = document.getElementById('kits');
+
+    setTimeout(function () {
+      kits.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 350);
+  }
+
+  var watcher = setInterval(function () {
+    scrollToKitsOnce();
+
+    if (hasScrolledToKits) {
+      clearInterval(watcher);
+    }
+  }, 400);
+
+  window.addEventListener('load', scrollToKitsOnce);
+})();
+</script>
+
 <!-- Rastreamento dos links de checkout mantido separado do delay -->
 <script>
 (function () {
